@@ -1,0 +1,8 @@
+/*******************************
+         Site Overrides
+*******************************/
+@font-face  {
+    font-family: 'roya';
+    src:url('themes/basic/assets/fonts/XB-Roya.ttf') format('ttf'); 
+    src:url('themes/basic/assets/fonts/XB-Roya.woff') format('woff'); 
+}

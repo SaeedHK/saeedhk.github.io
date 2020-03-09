@@ -21,3 +21,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+public/css/semantic/dist/components/
+public/css/semantic/dist/semantic.css
+public/css/semantic/dist/semantic.js
+public/css/semantic/dist/semantic.rtl.min.css
+public/css/semantic/dist/themes/
