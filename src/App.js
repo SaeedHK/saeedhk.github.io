@@ -170,7 +170,7 @@ const Support = () => (
       در صورت تمایل میتوانید این سایت را طریق لینک زیر حمایت کنید.
     </Header>
     <Container style={{ marginTop: '3em' }} textAlign='center'>
-    <Button>
+    <Button as='a' href="https://www.paypal.me/SaeedHadikhanloo" target="_blank">
           حمایت مالی
           <Icon name='paypal' />
     </Button>
