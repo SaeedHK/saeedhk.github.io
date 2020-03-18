@@ -1,4 +1,4 @@
-version: "2"
+version: "1"
 services:
   node:
     image: "node:10"
@@ -9,5 +9,5 @@ services:
     volumes:
       - ./:/home/node/app
     ports:
-      - 3000:3000
+      - 5000:3000
     command: "npm start"
