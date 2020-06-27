@@ -1,19 +1,12 @@
 import PropTypes from "prop-types";
 import React, { Component } from "react";
-import {
-  Button,
-  Container,
-  Header,
-  Icon,
-  Responsive,
-  Segment,
-  Visibility,
-} from "semantic-ui-react";
+import { Header, Responsive, Segment, Visibility } from "semantic-ui-react";
 
 import Navbar from "./components/Navbar";
 import HomeHeader from "./components/HomeHeader";
 import Members from "./components/Members";
 import Footer from "./components/Footer";
+import Support from "./components/Support";
 
 /* Heads up!
  * Neither Semantic UI nor Semantic UI React offer a responsive navbar, however, it can be implemented easily.
@@ -64,27 +57,6 @@ const About = () => (
     <Header as="h4" textAlign="center">
       من هادی وحید هستم.
     </Header>
-  </Segment>
-);
-
-const Support = () => (
-  <Segment style={{ padding: "4em 0em" }} vertical id="support">
-    <Header as="h1" textAlign="center">
-      حمایت
-    </Header>
-    <Header as="h3" textAlign="center">
-      در صورت تمایل میتوانید این سایت را طریق لینک زیر حمایت کنید.
-    </Header>
-    <Container style={{ marginTop: "3em" }} textAlign="center">
-      <Button
-        as="a"
-        href="https://www.paypal.me/SaeedHadikhanloo"
-        target="_blank"
-      >
-        حمایت مالی
-        <Icon name="paypal" />
-      </Button>
-    </Container>
   </Segment>
 );
 
