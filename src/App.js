@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import {
   Button,
   Container,
-  Grid,
   Header,
   Icon,
   Responsive,
@@ -13,6 +12,8 @@ import {
 
 import Navbar from "./components/Navbar";
 import HomeHeader from "./components/HomeHeader";
+import Members from "./components/Members";
+import Footer from "./components/Footer";
 
 /* Heads up!
  * Neither Semantic UI nor Semantic UI React offer a responsive navbar, however, it can be implemented easily.
@@ -55,60 +56,6 @@ ResponsiveContainer.propTypes = {
   children: PropTypes.node,
 };
 
-const Podcast = () => (
-  <Segment secondary>
-    <Grid container stackable>
-      <Grid.Row>
-        <Header as="h4" textAlign="center" style={{ marginBottom: "1em" }}>
-          درس گفتار اول
-        </Header>
-        <p>
-          حقوق مجموعه قواعدی ست که از طریق موسسات اجتماعی یا دولتی، جهت تنظیم
-          رفتار ایجاد و اعمال می‌شود. علم حقوق، دانش تحلیل و سیر تحول قواعد
-          حقوقی ست.[۱] حقوق، مجموعه قواعد و مقرراتی است که نظم اجتماعی را تأمین
-          می‌کند.[۲] حقوق در نظام‌های حقوقی ملی به روش‌های مختلفی ایجاد می‌شود؛
-          از طریق وضع یا نسخ قانون توسط قوه مقننه، از طریق صدور آئین‌نامه‌ها و
-          بخشنامه‌های دولتی در قوه مجریه، و تصمیمات قضایی الزام‌آور در قوه
-          قضائیه (که این روش آخر در نظام‌های کامن‌لا اهمیت بیشتری دارد). اشخاص
-          خصوصی هم می‌توانند قراردادهای الزام‌آور قانونی را میان خود ایجاد کنند
-          و در برخی وضعیت‌ها با توافق یکدیگر سیستم‌های میانجی‌گری را جایگزین
-          فرایند معمول دادگستری کنند. قانون اساسی نقش انکارناپذیری در شکل‌گیری
-          نظام حقوقی هر کشور دارد و نظام حقوقی نیز به نوبه خود شکل‌دهنده سیاست،
-          اقتصاد و جامعه است و روابط میان افراد را هدایت می‌کند.
-        </p>
-      </Grid.Row>
-      <Grid.Row>
-        <Button color="teal" as="a">
-          دریافت صوت
-        </Button>
-        <Button color="teal" as="a">
-          دریافت متن
-        </Button>
-      </Grid.Row>
-    </Grid>
-  </Segment>
-);
-
-const Podcasts = () => (
-  <Segment style={{ padding: "4em 0em" }} vertical id="podcasts">
-    <Header as="h1" textAlign="center">
-      پادکستها
-    </Header>
-    <Header as="h3" textAlign="center" style={{ marginBottom: "3em" }}>
-      هر پادکست شامل یک فایل صوتی و یک فایل متنی میباشد. برای دریافت هر کدام روی
-      گزینه مناسب کلیک بفرمایید.
-    </Header>
-    <Grid container stackable>
-      <Grid.Row>
-        <Podcast />
-      </Grid.Row>
-      <Grid.Row>
-        <Podcast />
-      </Grid.Row>
-    </Grid>
-  </Segment>
-);
-
 const About = () => (
   <Segment style={{ padding: "4em 0em" }} vertical id="about">
     <Header as="h1" textAlign="center">
@@ -141,24 +88,9 @@ const Support = () => (
   </Segment>
 );
 
-const Footer = () => (
-  <Segment
-    inverted
-    vertical
-    style={{ padding: "3em 0em" }}
-    textAlign="center"
-    id="footer"
-  >
-    <Container textAlign="center">
-      <Icon link name="instagram" size="big" />
-      <Icon link name="twitter" size="big" />
-    </Container>
-  </Segment>
-);
-
 const HomepageLayout = () => (
   <ResponsiveContainer>
-    <Podcasts />
+    <Members />
     <About />
     <Support />
     <Footer />
