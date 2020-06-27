@@ -6,11 +6,12 @@ import {
   Grid,
   Header,
   Icon,
-  Menu,
   Responsive,
   Segment,
   Visibility,
 } from "semantic-ui-react";
+
+import Navbar from "./components/Navbar";
 
 const HomepageHeading = ({ mobile }) => (
   <Container text>
@@ -42,32 +43,6 @@ HomepageHeading.propTypes = {
   mobile: PropTypes.bool,
 };
 
-function handleClick(id) {
-  document.querySelector("#" + id).scrollIntoView({ behavior: "smooth" });
-}
-
-const MenuBar = () => (
-  <Menu
-    // fixed = 'top'
-    secondary
-    inverted
-    // pointing
-    size="large"
-  >
-    <Container>
-      <Menu.Item as="a" onClick={() => handleClick("podcasts")}>
-        پادکست
-      </Menu.Item>
-      <Menu.Item as="a" onClick={() => handleClick("about")}>
-        درباره من
-      </Menu.Item>
-      <Menu.Item as="a" onClick={() => handleClick("support")}>
-        حمایت
-      </Menu.Item>
-    </Container>
-  </Menu>
-);
-
 /* Heads up!
  * Neither Semantic UI nor Semantic UI React offer a responsive navbar, however, it can be implemented easily.
  * It can be more complicated, but you can create really flexible markup.
@@ -85,7 +60,7 @@ class DesktopContainer extends Component {
             style={{ minHeight: 700, padding: "1em 0em" }}
             vertical
           >
-            <MenuBar />
+            <Navbar />
             <HomepageHeading />
           </Segment>
         </Visibility>
