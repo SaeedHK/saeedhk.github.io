@@ -1,5 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import AppFarsi from "./AppFarsi";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<AppFarsi />, document.getElementById("root"));

@@ -7,7 +7,7 @@ import Support from "./components/Support";
 import About from "./components/About";
 
 const HomepageLayout = () => (
-  <div>
+  <div style={{ direction: "rtl" }}>
     <HomeHeader />
     <Members />
     <About />
