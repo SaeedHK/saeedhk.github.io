@@ -1,18 +1,36 @@
 import React from "react";
-import { Container, Icon, Segment } from "semantic-ui-react";
-const Footer = () => (
-  <Segment
-    inverted
-    vertical
-    style={{ padding: "3em 0em" }}
-    textAlign="center"
-    id="footer"
-  >
-    <Container textAlign="center">
-      <Icon link name="instagram" size="big" />
-      <Icon link name="twitter" size="big" />
-    </Container>
-  </Segment>
-);
+import { Container, Segment, Icon } from "semantic-ui-react";
+
+const Footer = () => {
+  const twitterUrl = "https://twitter.com/hadikhanloo";
+  const linkedinUrl = "https://www.linkedin.com/in/saeed-hadikhanloo-24a46052/";
+  const githubUrl = "https://github.com/saeedhadikhanloo";
+  const IconedLink = ({ icon, url }) => (
+    <Icon
+      link
+      name={icon}
+      size="big"
+      onClick={() => {
+        window.open(url);
+        return false;
+      }}
+    />
+  );
+
+  return (
+    <Segment
+      vertical
+      style={{ padding: "1.5em 0em", background: "#88d1c7" }}
+      textAlign="center"
+      id="footer"
+    >
+      <Container textAlign="center">
+        <IconedLink icon="twitter" url={twitterUrl} />
+        <IconedLink icon="linkedin" url={linkedinUrl} />
+        <IconedLink icon="github" url={githubUrl} />
+      </Container>
+    </Segment>
+  );
+};
 
 export default Footer;
