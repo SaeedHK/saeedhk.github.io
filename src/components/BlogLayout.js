@@ -4,7 +4,7 @@ import Layout from "./Layout";
 
 const BlogLayout = ({ title, author, children }) => (
   <Layout>
-    <Container text>
+    <Container>
       <Header as="h1">
         {title}
         <Header.Subheader content={author} />

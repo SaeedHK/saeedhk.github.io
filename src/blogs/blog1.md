@@ -1,5 +1,3 @@
-# MD Blog
-
   Labore labore cupidatat ut id sint aliquip non aliqua. Magna ea tempor
   cillum irure non id consectetur sint in sint fugiat cupidatat. Dolor
   eiusmod esse laboris amet eiusmod veniam aliqua adipisicing pariatur
