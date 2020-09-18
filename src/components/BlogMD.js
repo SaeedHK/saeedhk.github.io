@@ -3,6 +3,7 @@ import MathMD from "./MathMD";
 import React, { Component } from "react";
 import Markdown from "markdown-to-jsx";
 import BlogLayout from "./BlogLayout";
+import blogsMeta from "../blogs/blogs-meta.json";
 
 const MyParagraph = ({ children }) => (
   <p style={{ fontSize: "1.33em" }}>{children}</p>
@@ -11,9 +12,7 @@ const MyParagraph = ({ children }) => (
 class BlogMD extends Component {
   constructor(props) {
     super(props);
-    const blogMeta = require("../blogs/blogs-meta.json").find(
-      (blog) => blog.id === props.id
-    );
+    const blogMeta = blogsMeta.find((blog) => blog.id === props.id);
     this.fileName = blogMeta.file;
     this.title = blogMeta.title;
     this.author = blogMeta.author;
@@ -26,9 +25,6 @@ class BlogMD extends Component {
       .then((res) => res.text())
       .then((md) => {
         this.setState({ md });
-      })
-      .catch(() => {
-        this.setState({ err: true });
       });
   }
 
