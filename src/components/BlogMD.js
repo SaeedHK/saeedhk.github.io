@@ -15,6 +15,8 @@ class BlogMD extends Component {
       (blog) => blog.id === props.id
     );
     this.fileName = blogMeta.file;
+    this.title = blogMeta.title;
+    this.author = blogMeta.author;
     this.state = { md: "", err: false };
   }
 
@@ -34,7 +36,7 @@ class BlogMD extends Component {
     let { md } = this.state;
 
     return (
-      <BlogLayout>
+      <BlogLayout title={this.title} author={this.author}>
         <Markdown
           children={md}
           options={{
