@@ -12,7 +12,7 @@ class BlogMD extends Component {
   constructor(props) {
     super(props);
     const blogMeta = require("../blogs/blogs-meta.json").find(
-      (blog) => blog.id == props.id
+      (blog) => blog.id === props.id
     );
     this.fileName = blogMeta.file;
     this.state = { md: "", err: false };
