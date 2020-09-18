@@ -13,19 +13,27 @@ class BlogMD extends Component {
   constructor(props) {
     super(props);
     const blogMeta = blogsMeta.find((blog) => blog.id === props.id);
-    this.fileName = blogMeta.file;
-    this.title = blogMeta.title;
-    this.author = blogMeta.author;
+    this.fileName = blogMeta ? blogMeta.file : null;
+    this.title = blogMeta ? blogMeta.title : null;
+    this.author = blogMeta ? blogMeta.author : null;
     this.state = { md: "", err: false };
   }
 
   componentWillMount() {
-    const filePath = require("../blogs/" + this.fileName);
-    fetch(filePath)
-      .then((res) => res.text())
-      .then((md) => {
-        this.setState({ md });
+    if (this.fileName) {
+      const filePath = require("../blogs/" + this.fileName);
+      fetch(filePath)
+        .then((res) => res.text())
+        .then((md) => {
+          this.setState({ md });
+        });
+    } else {
+      this.setState({
+        err: true,
+        md:
+          "#Error \n The blog is not found. Use the blog links appeared in the blog list.",
       });
+    }
   }
 
   render() {
