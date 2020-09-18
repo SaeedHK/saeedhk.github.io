@@ -11,16 +11,22 @@ const MyParagraph = ({ children }) => (
 class BlogMD extends Component {
   constructor(props) {
     super(props);
-
-    this.state = { md: "" };
+    const blogMeta = require("../blogs/blogs-meta.json").find(
+      (blog) => blog.id == props.id
+    );
+    this.fileName = blogMeta.file;
+    this.state = { md: "", err: false };
   }
 
   componentWillMount() {
-    const filePath = require("../blogs/blog1.md");
+    const filePath = require("../blogs/" + this.fileName);
     fetch(filePath)
       .then((res) => res.text())
       .then((md) => {
         this.setState({ md });
+      })
+      .catch(() => {
+        this.setState({ err: true });
       });
   }
 
