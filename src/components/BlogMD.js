@@ -3,11 +3,8 @@ import MathMD from "./MathMD";
 import React, { Component } from "react";
 import Markdown from "markdown-to-jsx";
 import BlogLayout from "./BlogLayout";
+import Paragraph from "./Paragraph";
 import blogsMeta from "../blogs/blogs-meta.json";
-
-const MyParagraph = ({ children }) => (
-  <p style={{ fontSize: "1.33em" }}>{children}</p>
-);
 
 class BlogMD extends Component {
   constructor(props) {
@@ -52,7 +49,7 @@ class BlogMD extends Component {
                 component: MathMD,
               },
               p: {
-                component: MyParagraph,
+                component: Paragraph,
               },
             },
           }}
