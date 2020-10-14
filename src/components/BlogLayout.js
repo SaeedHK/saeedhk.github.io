@@ -9,7 +9,7 @@ const BlogLayout = ({ title, author, children }) => (
       style={{
         backgroundImage: `url(${backgroundSVG})`,
         backgroundRepeat: "no-repeat",
-        minHeight: 150,
+        minHeight: 75,
         padding: "1em 0em",
         marginBottom: "3em",
       }}
