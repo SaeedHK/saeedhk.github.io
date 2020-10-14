@@ -19,12 +19,42 @@ const Logo = ({ mobile }) => {
   else return <Image src={LogoImage} centered size="medium" />;
 };
 
-const HeaderWrapper = ({ mobile, children }) => {
+const HeaderText = ({ mobile }) => (
+  <div>
+    <Header
+      as="h1"
+      content="Hey!"
+      style={{
+        fontSize: mobile ? "2em" : "4em",
+        fontWeight: "normal",
+        marginBottom: 0,
+      }}
+    />
+    <Header
+      as="h2"
+      style={{
+        fontSize: mobile ? "1.5em" : "1.7em",
+        fontWeight: "normal",
+        marginTop: mobile ? "0.5em" : "1.5em",
+      }}
+    >
+      I'm Saeed Hadikhanloo. I would like to share my ideas through this page.
+      Those are usually in either maths or developer subjects. I'm not however
+      100% sure. So let's see what will come up.
+    </Header>
+    <Button primary size="huge" as={NavLink} exact to="/blog">
+      Checkout my blogs
+      <Icon name="right arrow" />
+    </Button>
+  </div>
+);
+
+const HeaderWrapper = ({ mobile }) => {
   if (mobile) {
     return (
       <Container text style={{ marginTop: "1.5em", marginBottom: "0.5em" }}>
         <Logo mobile />
-        {children}
+        <HeaderText mobile />
       </Container>
     );
   } else {
@@ -36,7 +66,7 @@ const HeaderWrapper = ({ mobile, children }) => {
               <Logo />
             </Grid.Column>
             <Grid.Column textAlign="left" width="12">
-              {children}
+              <HeaderText />
             </Grid.Column>
           </Grid.Row>
         </Grid>
@@ -51,37 +81,15 @@ const ResponsiveHomepageHeading = ({ mobile }) => (
     style={{
       backgroundImage: `url(${backgroundSVG})`,
       backgroundRepeat: "no-repeat",
+      height: "100%",
       minHeight: mobile ? 350 : 676,
       padding: "1em 0em",
+      width: "100%",
+      position: "absolute",
     }}
     vertical
   >
-    <HeaderWrapper mobile={mobile}>
-      <Header
-        as="h1"
-        content="Saeed Hadikhanloo"
-        style={{
-          fontSize: mobile ? "2em" : "4em",
-          fontWeight: "normal",
-          marginBottom: 0,
-        }}
-      />
-      <Header
-        as="h2"
-        style={{
-          fontSize: mobile ? "1.5em" : "1.7em",
-          fontWeight: "normal",
-          marginTop: mobile ? "0.5em" : "1.5em",
-        }}
-      >
-        I am a developer and a mathematician.
-        <br />I would like to share my ideas through this page.
-      </Header>
-      <Button primary size="huge" as={NavLink} exact to="/blog">
-        Checkout my blogs
-        <Icon name="right arrow" />
-      </Button>
-    </HeaderWrapper>
+    <HeaderWrapper mobile={mobile} />
   </Segment>
 );
 
