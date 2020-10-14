@@ -62,7 +62,7 @@ ResponsiveAbout.propTypes = {
 };
 
 const About = () => (
-  <Layout>
+  <Layout footerPosition="fixed">
     <Segment
       style={{
         backgroundImage: `url(${backgroundSVG})`,

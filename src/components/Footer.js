@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Segment, Icon } from "semantic-ui-react";
 import { MediaContextProvider, Media } from "./Media";
 
-const FooterResponsive = () => {
+const FooterResponsive = ({ footerPosition }) => {
   const twitterUrl = "https://twitter.com/hadikhanloo";
   const linkedinUrl = "https://www.linkedin.com/in/saeed-hadikhanloo-24a46052/";
   const githubUrl = "https://github.com/saeedhadikhanloo";
@@ -22,6 +22,8 @@ const FooterResponsive = () => {
     <Segment
       vertical
       style={{
+        position: footerPosition ? footerPosition : "relative",
+        bottom: 0,
         padding: "1.5em 0em",
         background: "#88d1c7",
         width: "100%",
@@ -38,16 +40,20 @@ const FooterResponsive = () => {
   );
 };
 
-const FooterDesktop = () => <FooterResponsive />;
-const FooterMobile = () => <FooterResponsive mobile />;
+const FooterDesktop = ({ footerPosition }) => (
+  <FooterResponsive footerPosition={footerPosition} />
+);
+const FooterMobile = ({ footerPosition }) => (
+  <FooterResponsive mobile footerPosition={footerPosition} />
+);
 
-const Footer = () => (
+const Footer = ({ footerPosition }) => (
   <MediaContextProvider>
     <Media greaterThan="mobile">
-      <FooterDesktop />
+      <FooterDesktop footerPosition={footerPosition} />
     </Media>
     <Media at="mobile">
-      <FooterMobile />
+      <FooterMobile footerPosition={footerPosition} />
     </Media>
   </MediaContextProvider>
 );
