@@ -6,7 +6,6 @@ const Layout = ({ mobile, children, footerPosition }) => (
   <div>
     <Navbar />
     {children}
-    <Footer footerPosition={footerPosition} />
   </div>
 );
 

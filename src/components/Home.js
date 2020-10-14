@@ -6,7 +6,6 @@ import Layout from "./Layout";
 const Home = () => (
   <Layout>
     <HomepageHeading />
-    <Bio />
   </Layout>
 );
 
