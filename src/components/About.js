@@ -43,16 +43,23 @@ const ResponsiveAbout = ({ mobile }) => (
   <AboutWrapper mobile={mobile}>
     <Header as="h1" content="Bio" />
     <Paragraph>
-      Lobortis. Phasellus condimentum. Ut porttitor bibendum libero. Integer
-      euismod lacinia velit. Donec velit justo, sodales varius, cursus sed,
-      mattis a, arcu. Maecenas accumsan, sem iaculis egestas gravida, odio nunc
-      aliquet dui, eget cursus diam purus vel augue. Donec eros nisi, imperdiet
-      quis, volutpat ac, sollicitudin sed, arcu. Aenean vel mauris. Mauris
-      tincidunt. Nullam euismod odio at velit. Praesent elit purus, porttitor
-      id, facilisis in, consequat ut, libero. Morbi imperdiet, magna quis
-      ullamcorper malesuada, mi massa pharetra lectus, a pellentesque urna urna
-      id turpis. Nam posuere lectus vitae nibh. Etiam tortor orci, sagittis
-      malesuada, rhoncus quis, hendrerit eget, libero. Quisque commodo nulla at.
+      I abseloutly don't know who I am. The thing I know is that I did some
+      studies in maths and physics and has some experiences in software
+      engineer. I used to do some music, Piano and classical Guitar, fell in
+      love in{" "}
+      <a href="https://www.youtube.com/watch?v=7O8-1xUNsXM">Iranian Music</a>{" "}
+      and tried some{" "}
+      <a href="https://www.youtube.com/watch?v=b_SSrzMBHCA">Settar</a>. I am a
+      family man and have a daughter, I love my family and my parents. I love my
+      friends, we have spent many hours together talking about the reason of
+      life, more or less in the same spirit as{" "}
+      <a href="https://www.youtube.com/watch?v=aS1esgRV4Rc">
+        Dead Poets Society
+      </a>
+      .
+      <br />
+      <br />
+      But do these all represent me? I don't know.
     </Paragraph>
   </AboutWrapper>
 );
