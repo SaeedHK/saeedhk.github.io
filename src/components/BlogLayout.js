@@ -15,7 +15,7 @@ const BlogLayout = ({ title, author, children }) => (
       }}
       vertical
     />
-    <Container>
+    <Container textAlign="justified">
       <Header as="h1">
         {title}
         <Header.Subheader content={author} />
