@@ -5,7 +5,7 @@ import { MediaContextProvider, Media } from "./Media";
 import Layout from "./Layout";
 import Paragraph from "./Paragraph";
 import backgroundSVG from "../images/background.svg";
-import personalImageFile from "../images/saeed123.jpg";
+import personalImageFile from "../images/cube1.svg";
 
 const PersonalImage = ({ mobile }) => {
   if (mobile)
