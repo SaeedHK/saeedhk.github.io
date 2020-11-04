@@ -1,12 +1,28 @@
-import Code from "./Code";
-import MathMD from "./MathMD";
 import React, { Component } from "react";
 import Markdown from "markdown-to-jsx";
+import { Header, Container, Divider } from "semantic-ui-react";
+
+import Layout from "./Layout";
+import Code from "./Code";
+import MathMD from "./MathMD";
 import BlogLayout from "./BlogLayout";
 import Paragraph from "./Paragraph";
 import blogsMeta from "../blogs/blogs-meta.json";
 
-class BlogMD extends Component {
+const BlogLayout = ({ title, author, children }) => (
+  <Layout>
+    <Container textAlign="justified">
+      <Header as="h1">
+        {title}
+        <Header.Subheader content={author} />
+      </Header>
+      <Divider />
+      {children}
+    </Container>
+  </Layout>
+);
+
+class Blog extends Component {
   constructor(props) {
     super(props);
     const blogMeta = blogsMeta.find((blog) => blog.id === props.id);
@@ -59,4 +75,4 @@ class BlogMD extends Component {
   }
 }
 
-export default BlogMD;
+export default Blog;
