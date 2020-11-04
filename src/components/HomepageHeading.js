@@ -10,7 +10,7 @@ import {
   Container,
 } from "semantic-ui-react";
 import { MediaContextProvider, Media } from "./Media";
-import LogoImage from "../images/logo.svg";
+import LogoImage from "../images/me.svg";
 import { NavLink } from "react-router-dom";
 import backgroundSVG from "../images/background.svg";
 
@@ -53,8 +53,8 @@ const HeaderWrapper = ({ mobile }) => {
   if (mobile) {
     return (
       <Container text style={{ marginTop: "1.5em", marginBottom: "0.5em" }}>
-        <Logo mobile />
         <HeaderText mobile />
+        <Logo mobile />
       </Container>
     );
   } else {
@@ -62,11 +62,11 @@ const HeaderWrapper = ({ mobile }) => {
       <Container style={{ marginTop: "10%" }}>
         <Grid style={{ width: "1100px" }}>
           <Grid.Row verticalAlign="middle">
-            <Grid.Column width="4">
-              <Logo />
-            </Grid.Column>
             <Grid.Column textAlign="left" width="12">
               <HeaderText />
+            </Grid.Column>
+            <Grid.Column width="4">
+              <Logo />
             </Grid.Column>
           </Grid.Row>
         </Grid>
