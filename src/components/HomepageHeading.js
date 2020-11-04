@@ -32,15 +32,6 @@ const Logo = ({ mobile }) => {
 const HeaderText = ({ mobile }) => (
   <div>
     <Header
-      as="h1"
-      content="Hey!"
-      style={{
-        fontSize: mobile ? "2em" : "4em",
-        fontWeight: "normal",
-        marginBottom: 0,
-      }}
-    />
-    <Header
       as="h2"
       style={{
         fontSize: mobile ? "1.5em" : "1.7em",
