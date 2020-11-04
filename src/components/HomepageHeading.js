@@ -15,7 +15,17 @@ import { NavLink } from "react-router-dom";
 import backgroundSVG from "../images/background.svg";
 
 const Logo = ({ mobile }) => {
-  if (mobile) return <Image src={LogoImage} centered size="tiny" />;
+  if (mobile)
+    return (
+      <Image
+        src={LogoImage}
+        centered
+        style={{
+          width: `50%`,
+          opacity: `0.2`,
+        }}
+      />
+    );
   else return <Image src={LogoImage} centered size="medium" />;
 };
 
@@ -42,6 +52,7 @@ const HeaderText = ({ mobile }) => (
       Those are usually in either maths or developer subjects. I'm not however
       100% sure. So let's see what will come up.
     </Header>
+    <br />
     <Button primary size="huge" as={NavLink} exact to="/blog">
       Checkout my blogs
       <Icon name="right arrow" />
@@ -54,6 +65,7 @@ const HeaderWrapper = ({ mobile }) => {
     return (
       <Container text style={{ marginTop: "1.5em", marginBottom: "0.5em" }}>
         <HeaderText mobile />
+        <br />
         <Logo mobile />
       </Container>
     );
