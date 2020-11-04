@@ -5,7 +5,6 @@ import { Header, Container, Divider } from "semantic-ui-react";
 import Layout from "./Layout";
 import Code from "./Code";
 import MathMD from "./MathMD";
-import BlogLayout from "./BlogLayout";
 import Paragraph from "./Paragraph";
 import blogsMeta from "../blogs/blogs-meta.json";
 

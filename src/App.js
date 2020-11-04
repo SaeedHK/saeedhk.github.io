@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./components/Home.js";
-import BlogMD from "./components/BlogMD.js";
+import Blog from "./components/Blog.js";
 import About from "./components/About";
 import Error from "./components/Error.js";
 
@@ -12,7 +12,7 @@ export default class App extends Component {
         <div>
           <Switch>
             <Route path="/" component={Home} exact />
-            <Route path="/blog" component={() => <BlogMD id="1" />} exact />
+            <Route path="/blog" component={() => <Blog id="1" />} exact />
             <Route path="/about" component={About} exact />
             <Route component={Error} />
           </Switch>
