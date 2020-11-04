@@ -70,16 +70,6 @@ ResponsiveAbout.propTypes = {
 
 const About = () => (
   <Layout footerPosition="fixed">
-    <Segment
-      style={{
-        backgroundImage: `url(${backgroundSVG})`,
-        backgroundRepeat: "no-repeat",
-        minHeight: 75,
-        padding: "1em 0em",
-        marginBottom: "3em",
-      }}
-      vertical
-    ></Segment>
     <MediaContextProvider>
       <Media greaterThan="mobile">
         <ResponsiveAbout />
