@@ -9,10 +9,53 @@ import {
   Grid,
   Container,
 } from "semantic-ui-react";
+import * as d3 from "d3";
 import { MediaContextProvider, Media } from "./Media";
 import LogoImage from "../images/me.svg";
 import { NavLink } from "react-router-dom";
 import backgroundSVG from "../images/background.svg";
+
+const onImageHover = () => {
+  var icon = d3.select("#home-img");
+
+  const timeSteps = 50;
+  const duration = 15;
+  const transXRange = 3;
+  const transYRange = 3;
+  const scaleRange = 0;
+
+  const timeAdapt = function (t, range) {
+    var timeEffect = 1 - t / timeSteps;
+    return range * timeEffect;
+  };
+
+  for (var t = 0; t < timeSteps; t++) {
+    //var angle = d3.randomUniform(-45, 45)();
+    var angle = 0;
+    var adaptedScaleRange = timeAdapt(t, scaleRange);
+    var adaptedTransXRange = timeAdapt(t, transXRange);
+    var adaptedTransYRange = timeAdapt(t, transYRange);
+    var scale = d3.randomUniform(
+      1 - adaptedScaleRange,
+      1 + adaptedScaleRange
+    )();
+    var translateX = d3.randomUniform(
+      -adaptedTransXRange,
+      adaptedTransXRange
+    )();
+    var translateY = d3.randomUniform(
+      -adaptedTransYRange,
+      adaptedTransYRange
+    )();
+    icon = icon
+      .transition()
+      .style(
+        "transform",
+        `translateX(${translateX}px) translateY(${translateY}px) rotate(${angle}deg) scale(${scale})`
+      )
+      .duration(duration);
+  }
+};
 
 const Logo = ({ mobile }) => {
   if (mobile)
@@ -26,7 +69,16 @@ const Logo = ({ mobile }) => {
         }}
       />
     );
-  else return <Image src={LogoImage} centered size="medium" />;
+  else
+    return (
+      <Image
+        src={LogoImage}
+        centered
+        size="medium"
+        id="home-img"
+        onMouseEnter={onImageHover}
+      />
+    );
 };
 
 const HeaderText = ({ mobile }) => (
