@@ -9,7 +9,7 @@ const Blogs = () => {
   return (
     <Layout>
       <Container>
-        <Header as="h2">Latest blogs</Header>
+        <Header as="h1">Latest Blogs</Header>
         {blogsMeta.map((blog) => (
           <BlogCard blog={blog} />
         ))}
