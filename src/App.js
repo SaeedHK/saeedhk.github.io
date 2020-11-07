@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Home from "./components/Home.js";
-import Blog from "./components/Blog.js";
-import About from "./components/About";
-import Error from "./components/Error.js";
+import Home from "./pages/Home.js";
+import Blog from "./pages/Blog.js";
+import About from "./pages/About";
+import Error from "./pages/Error.js";
 
 export default class App extends Component {
   render() {
