@@ -5,15 +5,12 @@ import Layout from "../components/Layout";
 import BlogCard from "../components/BlogCard";
 import blogsMeta from "../blogs/blogs-meta.json";
 
-const BlogPage = () => {
-  const [blogs, setBlogs] = useState([]);
-  useEffect(() => setBlogs(blogsMeta), []);
-
+const Blogs = () => {
   return (
     <Layout>
       <Container>
         <Header as="h2">Latest blogs</Header>
-        {blogs.map((blog) => (
+        {blogsMeta.map((blog) => (
           <BlogCard blog={blog} />
         ))}
       </Container>
@@ -21,4 +18,4 @@ const BlogPage = () => {
   );
 };
 
-export default BlogPage;
+export default Blogs;
