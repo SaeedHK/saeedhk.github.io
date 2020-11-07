@@ -8,7 +8,7 @@ const BlogCard = ({ blog: { title, abstract, id } }) => {
       <Segment size="big" inverted color="teal">
         {title}
       </Segment>
-      <Segment>
+      <Segment secondary>
         <p>{abstract}</p>
         <Button color="teal" as={NavLink} exact to={`/blog/${id}`}>
           Read more
