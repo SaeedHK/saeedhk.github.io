@@ -43,7 +43,7 @@ const BlogPost = () => {
         "#Error \n The blog is not found. Use the blog links appeared in the blog list."
       );
     }
-  });
+  }, [fileName]);
 
   return (
     <BlogLayout title={title} author={author}>

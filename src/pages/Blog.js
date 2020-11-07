@@ -7,7 +7,7 @@ import blogsMeta from "../blogs/blogs-meta.json";
 
 const BlogPage = () => {
   const [blogs, setBlogs] = useState([]);
-  useEffect(() => setBlogs(blogsMeta));
+  useEffect(() => setBlogs(blogsMeta), []);
 
   return (
     <Layout>
