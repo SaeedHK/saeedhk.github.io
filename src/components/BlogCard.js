@@ -1,8 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { Segment, Header, Divider, Button } from "semantic-ui-react";
+import { Segment, Button } from "semantic-ui-react";
 
-const BlogCard = ({ blog: { author, title, abstract, id } }) => {
+const BlogCard = ({ blog: { title, abstract, id } }) => {
   return (
     <Segment.Group vertical>
       <Segment size="big" inverted color="teal">
