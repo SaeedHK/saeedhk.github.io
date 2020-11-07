@@ -1,9 +1,9 @@
 [
   {
     "id": "1",
-    "title": "Blog Title1",
+    "title": "Optimal control: an introduction",
     "author": "Saeed Hadikhanloo",
-    "abstract": "Anim duis culpa esse qui elit commodo deserunt esse consectetur culpa.",
-    "file": "blog1.md"
+    "abstract": "What is an optimal control problem?",
+    "file": "07-11-2020-optimal-control.md"
   }
 ]
