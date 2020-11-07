@@ -18,9 +18,6 @@ const Navbar = () => {
         <Menu.Item as={NavLink} exact to="/about">
           About
         </Menu.Item>
-        <Menu.Item as={NavLink} exact to="/contact">
-          Contact
-        </Menu.Item>
 
         <Menu.Menu position="right">
           <Menu.Item as="a" href={twitterUrl} icon="twitter" />
