@@ -21,7 +21,7 @@ const BlogLayout = ({ title, author, children }) => (
   </Layout>
 );
 
-class Blog extends Component {
+class BlogPost extends Component {
   constructor(props) {
     super(props);
     const blogMeta = blogsMeta.find((blog) => blog.id === props.id);
@@ -75,4 +75,4 @@ class Blog extends Component {
   }
 }
 
-export default Blog;
+export default BlogPost;
