@@ -1,5 +1,6 @@
 import React from "react";
-import { Segment, Header, Divider } from "semantic-ui-react";
+import { NavLink } from "react-router-dom";
+import { Segment, Header, Divider, Button } from "semantic-ui-react";
 
 const BlogCard = ({ author, title, abstract }) => {
   return (
@@ -8,6 +9,9 @@ const BlogCard = ({ author, title, abstract }) => {
       <Header as="h4">{author}</Header>
       <Divider />
       {abstract}
+      <Button as={NavLink} exact to="/blog">
+        Read more
+      </Button>
     </Segment>
   );
 };
