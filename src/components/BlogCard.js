@@ -4,15 +4,17 @@ import { Segment, Header, Divider, Button } from "semantic-ui-react";
 
 const BlogCard = ({ blog: { author, title, abstract, id } }) => {
   return (
-    <Segment secondary>
-      <Header as="h3">{title}</Header>
-      <Header as="h4">{author}</Header>
-      <Divider />
-      <p>{abstract}</p>
-      <Button as={NavLink} exact to={`/blog/${id}`}>
-        Read more
-      </Button>
-    </Segment>
+    <Segment.Group vertical>
+      <Segment size="big" inverted color="teal">
+        {title}
+      </Segment>
+      <Segment>{abstract}</Segment>
+      <Segment basic>
+        <Button as={NavLink} exact to={`/blog/${id}`}>
+          Read more
+        </Button>
+      </Segment>
+    </Segment.Group>
   );
 };
 
