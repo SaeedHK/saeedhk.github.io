@@ -4,13 +4,13 @@ import { Segment, Button } from "semantic-ui-react";
 
 const BlogCard = ({ blog: { title, abstract, id } }) => {
   return (
-    <Segment.Group vertical>
+    <Segment.Group raised>
       <Segment size="big" inverted color="teal">
         {title}
       </Segment>
-      <Segment>{abstract}</Segment>
-      <Segment basic>
-        <Button as={NavLink} exact to={`/blog/${id}`}>
+      <Segment>
+        <p>{abstract}</p>
+        <Button color="teal" as={NavLink} exact to={`/blog/${id}`}>
           Read more
         </Button>
       </Segment>
