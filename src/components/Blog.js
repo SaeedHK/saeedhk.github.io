@@ -54,7 +54,6 @@ class Blog extends Component {
     return (
       <BlogLayout title={this.title} author={this.author}>
         <Markdown
-          children={md}
           options={{
             overrides: {
               Code: {
@@ -68,7 +67,9 @@ class Blog extends Component {
               },
             },
           }}
-        />
+        >
+          {md}
+        </Markdown>
       </BlogLayout>
     );
   }
