@@ -1,10 +1,9 @@
 import PropTypes from "prop-types";
 import React from "react";
-import { Header, Segment, Image, Grid, Container } from "semantic-ui-react";
+import { Header, Image, Grid, Container } from "semantic-ui-react";
 import { MediaContextProvider, Media } from "./Media";
 import Layout from "./Layout";
 import Paragraph from "./Paragraph";
-import backgroundSVG from "../images/background.svg";
 import personalImageFile from "../images/cube1.svg";
 
 const PersonalImage = ({ mobile }) => {
