@@ -40,7 +40,7 @@ const Blogs = () => {
         </Paragraph>
         <Header as="h2">Latest Blogs</Header>
         {blogsMeta.map((blog) => (
-          <BlogCard blog={blog} />
+          <BlogCard blog={blog} key={blog.id} />
         ))}
       </Container>
     </Layout>
