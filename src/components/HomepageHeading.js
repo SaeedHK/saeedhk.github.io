@@ -91,11 +91,10 @@ const HeaderText = ({ mobile }) => (
         marginTop: mobile ? "0.5em" : "1.5em",
       }}
     >
-      I'm Saeed Hadikhanloo. I would like to share my ideas through this page.
-      Those are usually in either maths or developer subjects. I'm not however
-      100% sure. So let's see what will come up.
+      Hello. I'm Saeed.
+      <br />
+      This is my personal page where I would like to share some ideas.
     </Header>
-    <br />
     <Button color="teal" size="huge" as={NavLink} exact to="/blog">
       Checkout my blogs
       <Icon name="right arrow" />
