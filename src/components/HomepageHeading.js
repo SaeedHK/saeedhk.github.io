@@ -96,7 +96,7 @@ const HeaderText = ({ mobile }) => (
       100% sure. So let's see what will come up.
     </Header>
     <br />
-    <Button primary size="huge" as={NavLink} exact to="/blog">
+    <Button color="teal" size="huge" as={NavLink} exact to="/blog">
       Checkout my blogs
       <Icon name="right arrow" />
     </Button>
