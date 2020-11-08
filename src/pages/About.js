@@ -1,38 +1,20 @@
 import PropTypes from "prop-types";
 import React from "react";
-import { Header, Image, Grid, Container } from "semantic-ui-react";
+import { Header, Image, Container } from "semantic-ui-react";
 import { MediaContextProvider, Media } from "../components/Media";
 import Layout from "../components/Layout";
 import Paragraph from "../components/Paragraph";
-import personalImageFile from "../images/cube1.svg";
-
-const PersonalImage = ({ mobile }) => {
-  if (mobile)
-    return <Image src={personalImageFile} centered rounded size="small" />;
-  else return <Image src={personalImageFile} centered rounded size="medium" />;
-};
+import img from "../images/cube1.svg";
 
 const AboutWrapper = ({ mobile, children }) => {
   if (mobile) {
-    return (
-      <Container>
-        <PersonalImage mobile />
-        {children}
-      </Container>
-    );
+    return <Container>{children}</Container>;
   } else {
     return (
-      <Container>
-        <Grid>
-          <Grid.Row>
-            <Grid.Column textAlign="left" width="10">
-              {children}
-            </Grid.Column>
-            <Grid.Column width="6">
-              <PersonalImage />
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
+      <Container textAlign="justified">
+        <Image src={img} size="medium" floated="right" />
+
+        {children}
       </Container>
     );
   }
