@@ -26,7 +26,7 @@ const BlogPost = () => {
   const { id } = useParams();
   const blogMeta = blogsMeta.find((blog) => blog.id === id);
   const fileName = blogMeta ? blogMeta.file : null;
-  const title = blogMeta ? blogMeta.title : null;
+  const title = blogMeta ? blogMeta.title : "Blog not found !";
   const author = blogMeta ? blogMeta.author : null;
   const [md, setMD] = useState("");
 
@@ -39,9 +39,7 @@ const BlogPost = () => {
           setMD(md);
         });
     } else {
-      setMD(
-        "#Error \n The blog is not found. Use the blog links appeared in the blog list."
-      );
+      setMD("<p>Please use the links appear on the blog page.</p>");
     }
   }, [fileName]);
 
