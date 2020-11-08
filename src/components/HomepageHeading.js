@@ -84,7 +84,6 @@ const Logo = ({ mobile }) => {
 const HeaderText = ({ mobile }) => (
   <div>
     <Header
-      as="h2"
       style={{
         fontSize: mobile ? "1.5em" : "1.7em",
         fontWeight: "normal",
@@ -95,7 +94,7 @@ const HeaderText = ({ mobile }) => (
       <br />
       This is my personal page where I would like to share some ideas.
     </Header>
-    <Button color="teal" size="huge" as={NavLink} exact to="/blog">
+    <Button color="teal" size="large" as={NavLink} exact to="/blog">
       Checkout my blogs
       <Icon name="right arrow" />
     </Button>
