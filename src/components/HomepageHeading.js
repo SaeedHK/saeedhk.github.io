@@ -112,18 +112,16 @@ const HeaderWrapper = ({ mobile }) => {
     );
   } else {
     return (
-      <Container style={{ marginTop: "10%" }}>
-        <Grid style={{ width: "1100px" }}>
-          <Grid.Row verticalAlign="middle">
-            <Grid.Column textAlign="left" width="12">
-              <HeaderText />
-            </Grid.Column>
-            <Grid.Column width="4">
-              <Logo />
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      </Container>
+      <Grid container style={{ marginTop: "10%" }}>
+        <Grid.Row verticalAlign="middle">
+          <Grid.Column textAlign="left" width="12">
+            <HeaderText />
+          </Grid.Column>
+          <Grid.Column width="4">
+            <Logo />
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
     );
   }
 };
@@ -133,10 +131,7 @@ const ResponsiveHomepageHeading = ({ mobile }) => (
     textAlign={mobile ? "center" : null}
     style={{
       backgroundImage: `url(${backgroundSVG})`,
-      backgroundRepeat: "no-repeat",
       height: "100%",
-      minHeight: mobile ? 350 : 676,
-      padding: "1em 0em",
       width: "100%",
       position: "absolute",
     }}
