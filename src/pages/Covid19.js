@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../components/Layout";
-import { Container, Table, Flag } from "semantic-ui-react";
+import { Container, Table, Flag, Header } from "semantic-ui-react";
+import moment from "moment";
 
 const Covid19 = () => {
   const [covidData, setCovidData] = useState([]);
@@ -20,7 +21,10 @@ const Covid19 = () => {
   return (
     <Layout>
       <Container>
-        <div>{date.toString()}</div>
+        <Header as="h2">
+          Top countries for daily deaths as of{" "}
+          {moment(date).format("DD MMM YYYY")}
+        </Header>
         <Table celled>
           <Table.Header>
             <Table.Row>
