@@ -10,7 +10,7 @@ const githubUrl = "https://github.com/saeedhk";
 const NavbarDesktop = () => {
   return (
     <Media greaterThan="mobile">
-      <Menu secondary style={{ margin: "1.5em 0em" }}>
+      <Menu secondary style={{ margin: "1.5em" }}>
         <Container>
           <Menu.Item as={NavLink} exact to="/">
             Home
@@ -59,7 +59,7 @@ const NavbarMobile = () => {
         </Menu.Item>
       </Sidebar>
 
-      <Container>
+      <Container style={{ margin: "1em" }}>
         <Menu secondary size="large">
           <Menu.Item onClick={handleToggle} icon="sidebar" />
 
