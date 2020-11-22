@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Blogs from "./pages/Blogs";
 import BlogPost from "./components/BlogPost";
 import About from "./pages/About";
+import Covid19 from "./pages/Covid19";
 import Error from "./pages/Error";
 
 export default class App extends Component {
@@ -16,6 +17,7 @@ export default class App extends Component {
             <Route path="/blog" component={() => <Blogs />} exact />
             <Route path="/blog/:id" component={() => <BlogPost />} exact />
             <Route path="/about" component={About} exact />
+            <Route path="/covid19" component={Covid19} exact />
             <Route component={Error} />
           </Switch>
         </div>
