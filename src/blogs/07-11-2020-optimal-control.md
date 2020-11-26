@@ -1,27 +1,14 @@
-  Labore labore cupidatat ut id sint aliquip non aliqua. Magna ea tempor
-  cillum irure non id consectetur sint in sint fugiat cupidatat. Dolor
-  eiusmod esse laboris amet eiusmod veniam aliqua adipisicing pariatur
-  laboris Lorem anim consequat. Exercitation aute duis eiusmod incididunt
-  irure dolore Lorem dolor nisi minim nostrud laborum. Occaecat occaecat eu
-  consequat et magna in ea. Magna aliquip fugiat id ut minim et amet amet
-  aute. Velit eiusmod amet nisi quis esse do dolor. Aliquip ut nisi eiusmod
-  est culpa laborum duis voluptate elit ullamco non aliquip proident. Minim
-  magna aliqua do laborum occaecat est ad. Ex laborum occaecat aute commodo
-  proident duis duis sunt aliquip aute amet adipisicing ipsum. Veniam
-  eiusmod cillum mollit mollit laborum Lorem culpa sunt ex sit pariatur.
-  Irure ullamco officia anim Lorem deserunt enim. Proident duis velit amet
-  eiusmod occaecat ullamco est dolor deserunt in in consequat. Commodo Lorem
-  eiusmod velit do sit sunt laboris proident amet cupidatat mollit nisi
-  proident incididunt.
-  
-  Amet proident do excepteur sit. Nostrud dolore cillum amet enim ad. Est
-  dolor do ea consequat in sint enim quis irure voluptate aute dolor
-  deserunt. Officia irure aliquip fugiat quis ut labore nisi magna esse.
-  Enim amet ex exercitation minim sit proident irure ad ut occaecat duis
-  pariatur deserunt fugiat. Duis est deserunt aliquip sint fugiat. Est non
-  incididunt commodo ipsum aliqua voluptate ipsum non ipsum officia irure.
-  Elit elit incididunt id irure ipsum.
+Optimal control problems consist of situations where an agent wants to minimize a cost by controlling
+a controllable variable. For example, suppose a driver wants to move between two places and he/she wants to
+minimize the vehicle fuel consumption as much as possible, while can control the speed and break through
+the their corresponding pedals. Or suppose that an automatic software do this job. This can be
+considered as a optimal control problem.
+
+Let's try to formalize this example. Suppose <math>X(t)</math> denotes the
+position of the agent (or its vehicle) at time <math>t</math>, where <math>t \in [0,T]</math>
+for some positive number <math>T</math>. The dynamic of the problem will be
+
+<Math> \mathrm{d} X(t) = v(t) \mathrm{d} t, \quad \mathrm{d} v(t) = a(t) \mathrm{d} t +\sigma\mathrm{d} B_t</Math>
+<Math> |a| \leq a_{max} </Math>
 
 <Code>let x = 1</Code>
-<Math> x = 1</Math>
-

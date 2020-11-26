@@ -54,7 +54,7 @@ const BlogPost = () => {
             Math: {
               component: MathMD,
             },
-            Mathi: {
+            math: {
               component: ({ children }) => <MathMD inline>{children}</MathMD>,
             },
             p: {
