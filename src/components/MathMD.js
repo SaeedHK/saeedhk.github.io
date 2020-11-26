@@ -6,10 +6,11 @@ const MathMD = ({ inline, children }) => {
     return (
       <div
         style={{
-          marginLeft: "5px",
+          marginLeft: "3px",
           marginRight: "5px",
           fontSize: "1em",
           display: "inline",
+          color: "#010B48",
         }}
       >
         <InlineMath>{text}</InlineMath>
