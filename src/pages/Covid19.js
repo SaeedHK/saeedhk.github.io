@@ -6,7 +6,6 @@ import moment from "moment";
 const Covid19 = () => {
   const [covidData, setCovidData] = useState([]);
   const [date, setDate] = useState("");
-  const [global, setGlobal] = useState({});
 
   useEffect(() => {
     fetch("https://api.covid19api.com/summary")
@@ -14,7 +13,6 @@ const Covid19 = () => {
       .then((d) => {
         setDate(new Date(d.Date));
         setCovidData(d.Countries);
-        setGlobal(d.Global);
       });
   }, []);
 
