@@ -73,7 +73,9 @@ const Covid19 = () => {
         <div id="country-plot">
           <Line
             data={{
-              labels: countryData.map((d) => moment(d.Date).format("MMM YYYY")),
+              labels: countryData.map((d) =>
+                moment(d.Date).format("DD MMM YYYY")
+              ),
               datasets: [
                 {
                   label: `N Deaths for ${country.toUpperCase()}`,
