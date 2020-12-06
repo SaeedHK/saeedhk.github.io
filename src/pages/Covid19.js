@@ -36,7 +36,34 @@ const Covid19 = () => {
   }, [country]);
 
   const CountryDropDown = () => (
-    <Dropdown fluid search selection placeholder="Select Country"></Dropdown>
+    <Dropdown
+      fluid
+      search
+      selection
+      placeholder="Select Country"
+      options={covidData.map((d) => {
+        // typical value for d
+        // Country: "Serbia"
+        //CountryCode: "RS"
+        //Date: "2020-12-06T03:37:47Z"
+        //NewConfirmed: 7782
+        //NewDeaths: 69
+        //NewRecovered: 0
+        //Premium: Object {  }
+        //Slug: "serbia"
+        //TotalConfirmed: 206940
+        //TotalDeaths: 1834
+        //TotalRecovered: 0
+        return {
+          key: d.CountryCode,
+          flag: d.CountryCode.toLowerCase(),
+          text: d.Country,
+          onClick: function () {
+            setCountry(d.Slug);
+          },
+        };
+      })}
+    />
   );
 
   return (
