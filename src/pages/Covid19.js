@@ -2,11 +2,12 @@ import React, { useState, useEffect } from "react";
 import Layout from "../components/Layout";
 import { Container, Table, Flag, Header } from "semantic-ui-react";
 import moment from "moment";
+import { Line } from "react-chartjs-2";
 
 const Covid19 = () => {
   const [covidData, setCovidData] = useState([]);
   const [date, setDate] = useState("");
-  const [country, setCountry] = useState("iran");
+  const [country, setCountry] = useState("ir");
   const [countryData, setCountryData] = useState([]);
 
   useEffect(() => {
@@ -23,6 +24,7 @@ const Covid19 = () => {
       .then((resp) => resp.json())
       .then((d) => {
         setCountryData(d);
+        console.log(d);
       })
       .catch((e) => {
         console.log(e);
@@ -33,6 +35,36 @@ const Covid19 = () => {
   return (
     <Layout>
       <Container>
+        <div id="country-plot">
+          <Line
+            data={{
+              labels: countryData.map((d) => moment(d.Date).format("MMM YYYY")),
+              datasets: [
+                {
+                  label: `N Deaths for ${country.toUpperCase()}`,
+                  fill: true,
+                  //   lineTension: 0.1,
+                  //   backgroundColor: "rgba(75,192,192,0.4)",
+                  //   borderColor: "rgba(75,192,192,1)",
+                  //   borderCapStyle: "butt",
+                  //   borderDash: [],
+                  //   borderDashOffset: 0.0,
+                  //   borderJoinStyle: "miter",
+                  //   pointBorderColor: "rgba(75,192,192,1)",
+                  //   pointBackgroundColor: "#fff",
+                  //   pointBorderWidth: 1,
+                  //   pointHoverRadius: 5,
+                  //   pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                  //   pointHoverBorderColor: "rgba(220,220,220,1)",
+                  //   pointHoverBorderWidth: 2,
+                  //   pointRadius: 1,
+                  //   pointHitRadius: 10,
+                  data: countryData.map((d) => d.Deaths),
+                },
+              ],
+            }}
+          />
+        </div>
         <Header as="h2">
           Top countries for daily deaths as of{" "}
           {moment(date).format("DD MMM YYYY")}
