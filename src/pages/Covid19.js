@@ -15,7 +15,11 @@ const Covid19 = () => {
       .then((resp) => resp.json())
       .then((d) => {
         setDate(new Date(d.Date));
-        setCovidData(d.Countries);
+        setCovidData(
+          d.Countries.sort(function compareNumbers(a, b) {
+            return b.NewDeaths - a.NewDeaths;
+          }).slice(0, 50)
+        );
       });
   }, []);
 
@@ -31,42 +35,8 @@ const Covid19 = () => {
       });
   }, [country]);
 
-  const countryOptions = [
-    { key: "af", value: "af", flag: "af", text: "Afghanistan" },
-    { key: "ax", value: "ax", flag: "ax", text: "Aland Islands" },
-    { key: "al", value: "al", flag: "al", text: "Albania" },
-    { key: "dz", value: "dz", flag: "dz", text: "Algeria" },
-    { key: "as", value: "as", flag: "as", text: "American Samoa" },
-    { key: "ad", value: "ad", flag: "ad", text: "Andorra" },
-    { key: "ao", value: "ao", flag: "ao", text: "Angola" },
-    { key: "ai", value: "ai", flag: "ai", text: "Anguilla" },
-    { key: "ag", value: "ag", flag: "ag", text: "Antigua" },
-    { key: "ar", value: "ar", flag: "ar", text: "Argentina" },
-    { key: "am", value: "am", flag: "am", text: "Armenia" },
-    { key: "aw", value: "aw", flag: "aw", text: "Aruba" },
-    { key: "au", value: "au", flag: "au", text: "Australia" },
-    { key: "at", value: "at", flag: "at", text: "Austria" },
-    { key: "az", value: "az", flag: "az", text: "Azerbaijan" },
-    { key: "bs", value: "bs", flag: "bs", text: "Bahamas" },
-    { key: "bh", value: "bh", flag: "bh", text: "Bahrain" },
-    { key: "bd", value: "bd", flag: "bd", text: "Bangladesh" },
-    { key: "bb", value: "bb", flag: "bb", text: "Barbados" },
-    { key: "by", value: "by", flag: "by", text: "Belarus" },
-    { key: "be", value: "be", flag: "be", text: "Belgium" },
-    { key: "bz", value: "bz", flag: "bz", text: "Belize" },
-    { key: "bj", value: "bj", flag: "bj", text: "Benin" },
-  ];
-
   const CountryDropDown = () => (
-    <Dropdown
-      clearable
-      fluid
-      multiple
-      search
-      selection
-      options={countryOptions}
-      placeholder="Select Country"
-    />
+    <Dropdown fluid search selection placeholder="Select Country"></Dropdown>
   );
 
   return (
@@ -97,7 +67,7 @@ const Covid19 = () => {
                   pointHoverBorderWidth: 2,
                   pointRadius: 0,
                   pointHitRadius: 10,
-                  data: countryData.map((d, i) => {
+                  data: countryData.map((_, i) => {
                     if (i > 0)
                       return countryData[i].Deaths - countryData[i - 1].Deaths;
                     else return countryData[0].Deaths;
@@ -121,24 +91,19 @@ const Covid19 = () => {
             </Table.Row>
           </Table.Header>
           <Table.Body>
-            {covidData
-              .sort(function compareNumbers(a, b) {
-                return b.NewDeaths - a.NewDeaths;
-              })
-              .slice(0, 50)
-              .map((d, i) => {
-                return (
-                  <Table.Row key={i}>
-                    <Table.Cell>{i + 1}</Table.Cell>
-                    <Table.Cell>
-                      <Flag name={d.CountryCode.toLowerCase()} />
-                      {d.Country}
-                    </Table.Cell>
-                    <Table.Cell>{d.NewDeaths}</Table.Cell>
-                    <Table.Cell>{d.TotalDeaths}</Table.Cell>
-                  </Table.Row>
-                );
-              })}
+            {covidData.map((d, i) => {
+              return (
+                <Table.Row key={i}>
+                  <Table.Cell>{i + 1}</Table.Cell>
+                  <Table.Cell>
+                    <Flag name={d.CountryCode.toLowerCase()} />
+                    {d.Country}
+                  </Table.Cell>
+                  <Table.Cell>{d.NewDeaths}</Table.Cell>
+                  <Table.Cell>{d.TotalDeaths}</Table.Cell>
+                </Table.Row>
+              );
+            })}
           </Table.Body>
         </Table>
       </Container>
