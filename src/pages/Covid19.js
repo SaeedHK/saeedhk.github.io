@@ -6,6 +6,8 @@ import moment from "moment";
 const Covid19 = () => {
   const [covidData, setCovidData] = useState([]);
   const [date, setDate] = useState("");
+  const [country, setCountry] = useState("iran");
+  const [countryData, setCountryData] = useState([]);
 
   useEffect(() => {
     fetch("https://api.covid19api.com/summary")
@@ -15,6 +17,18 @@ const Covid19 = () => {
         setCovidData(d.Countries);
       });
   }, []);
+
+  useEffect(() => {
+    fetch(`https://api.covid19api.com/dayone/country/${country}`)
+      .then((resp) => resp.json())
+      .then((d) => {
+        setCountryData(d);
+      })
+      .catch((e) => {
+        console.log(e);
+        setCountryData([]);
+      });
+  }, [country]);
 
   return (
     <Layout>
@@ -26,7 +40,7 @@ const Covid19 = () => {
         <Table celled>
           <Table.Header>
             <Table.Row>
-              <Table.HeaderCell>N</Table.HeaderCell>
+              <Table.HeaderCell>Nº</Table.HeaderCell>
               <Table.HeaderCell>Country</Table.HeaderCell>
               <Table.HeaderCell>NewDeaths</Table.HeaderCell>
               <Table.HeaderCell>TotalDeaths</Table.HeaderCell>
@@ -39,7 +53,6 @@ const Covid19 = () => {
               })
               .slice(0, 50)
               .map((d, i) => {
-                console.log(d);
                 return (
                   <Table.Row key={i}>
                     <Table.Cell>{i + 1}</Table.Cell>
