@@ -108,7 +108,7 @@ const Covid19 = () => {
           Top countries for daily deaths as of{" "}
           {moment(date).format("DD MMM YYYY")}
         </Header>
-        <Table celled>
+        <Table celled selectable>
           <Table.Header>
             <Table.Row>
               <Table.HeaderCell>Nº</Table.HeaderCell>
@@ -120,7 +120,12 @@ const Covid19 = () => {
           <Table.Body>
             {covidData.map((d, i) => {
               return (
-                <Table.Row key={i}>
+                <Table.Row
+                  key={i}
+                  onClick={() => {
+                    setCountry(d.Slug);
+                  }}
+                >
                   <Table.Cell>{i + 1}</Table.Cell>
                   <Table.Cell>
                     <Flag name={d.CountryCode.toLowerCase()} />
