@@ -21,7 +21,7 @@
     "react-syntax-highlighter": "^13.5.3",
     "semantic-ui-react": "^1.2.1"
   },
-  "homepage": "https://saeedhadikhanloo.github.io/",
+  "homepage": "https://saeedhk.github.io/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
