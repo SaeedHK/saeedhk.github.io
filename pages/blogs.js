@@ -1,10 +1,10 @@
 import React from "react";
 import { Header, Container, Divider } from "semantic-ui-react";
 
-import Layout from "../components/Layout";
-import BlogCard from "../components/BlogCard";
-import Paragraph from "../components/Paragraph";
-import blogsMeta from "../blogs/blogs-meta.json";
+import Layout from "./src/components/Layout";
+import BlogCard from "./src/components/BlogCard";
+import Paragraph from "./src/components/Paragraph";
+import blogsMeta from "./src/blogs/blogs-meta.json";
 
 const Blogs = () => {
   return (
