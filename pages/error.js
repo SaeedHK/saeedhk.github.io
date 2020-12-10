@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Message, Container } from "semantic-ui-react";
-import Layout from "../components/Layout";
+import Layout from "./src/components/Layout";
 
 export default class Error extends Component {
   render() {
