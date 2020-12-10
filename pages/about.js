@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 import React from "react";
 import { Header, Image, Container } from "semantic-ui-react";
-import { MediaContextProvider, Media } from "../components/Media";
-import Layout from "../components/Layout";
-import Paragraph from "../components/Paragraph";
-import img from "../images/cube1.svg";
+import { MediaContextProvider, Media } from "./src/components/Media";
+import Layout from "./src/components/Layout";
+import Paragraph from "./src/components/Paragraph";
+import img from "./src/images/cube1.svg";
 
 const AboutWrapper = ({ mobile, children }) => {
   if (mobile) {
