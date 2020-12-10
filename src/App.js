@@ -4,7 +4,6 @@ import Home from "./pages/Home";
 import Blogs from "./pages/Blogs";
 import BlogPost from "./components/BlogPost";
 import About from "./pages/About";
-import Covid19 from "./pages/Covid19";
 import Error from "./pages/Error";
 
 export default class App extends Component {

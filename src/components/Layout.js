@@ -23,9 +23,6 @@ const NavbarDesktop = () => {
           </Menu.Item>
 
           <Menu.Menu position="right">
-            <Menu.Item as={NavLink} exact to="/covid19">
-              Covid19
-            </Menu.Item>
             <Menu.Item as="a" href={twitterUrl} icon="twitter" />
             <Menu.Item as="a" href={githubUrl} icon="github" />
             <Menu.Item as="a" href={linkedinUrl} icon="linkedin" />
