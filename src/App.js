@@ -17,7 +17,6 @@ export default class App extends Component {
             <Route path="/blog" component={() => <Blogs />} exact />
             <Route path="/blog/:id" component={() => <BlogPost />} exact />
             <Route path="/about" component={About} exact />
-            <Route path="/covid19" component={Covid19} exact />
             <Route component={Error} />
           </Switch>
         </div>
