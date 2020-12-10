@@ -28,6 +28,7 @@ const BlogPost = () => {
   const fileName = blogMeta ? blogMeta.file : null;
   const title = blogMeta ? blogMeta.title : "Blog not found !";
   const author = blogMeta ? blogMeta.author : null;
+  const hasMD = blogMeta ? blogMeta.hasMD : false;
   const [md, setMD] = useState("");
 
   useEffect(() => {
@@ -41,32 +42,37 @@ const BlogPost = () => {
     } else {
       setMD("<p>Please use the links appear on the blog page.</p>");
     }
-  }, [fileName]);
+  }, [fileName, hasMD]);
 
-  return (
-    <BlogLayout title={title} author={author}>
-      <Markdown
-        options={{
-          overrides: {
-            Code: {
-              component: Code,
+  if (hasMD)
+    return (
+      <BlogLayout title={title} author={author}>
+        <Markdown
+          options={{
+            overrides: {
+              Code: {
+                component: Code,
+              },
+              Math: {
+                component: MathMD,
+              },
+              math: {
+                component: ({ children }) => <MathMD inline>{children}</MathMD>,
+              },
+              p: {
+                component: Paragraph,
+              },
             },
-            Math: {
-              component: MathMD,
-            },
-            math: {
-              component: ({ children }) => <MathMD inline>{children}</MathMD>,
-            },
-            p: {
-              component: Paragraph,
-            },
-          },
-        }}
-      >
-        {md}
-      </Markdown>
-    </BlogLayout>
-  );
+          }}
+        >
+          {md}
+        </Markdown>
+      </BlogLayout>
+    );
+  else {
+    const blog = require("../blogs/" + fileName);
+    return blog.default();
+  }
 };
 
 export default BlogPost;
