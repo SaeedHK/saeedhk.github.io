@@ -6,7 +6,7 @@ We use [Nix](https://nixos.org) to have a reproducible build environment. Run `n
 in the project root. Then build the project dependencies and the CSS with:
 
 ```shell
-$ npm install && cd src/semantic-ui && gulp build
+$ npm install && npm run build-css
 ```
 
 ## Deploy on gtihub pages
