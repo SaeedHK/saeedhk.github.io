@@ -11,8 +11,8 @@ $ npm install && npm run build-css
 
 ## Deploy on gtihub pages
 
-We github-pages and a corresponding node API to deploy the project. After building the code, run
-the following commend to deploy the project in github pages:
+We use github-pages and [its nodejs API](https://www.npmjs.com/package/gh-pages) to deploy the 
+project. After building the code, run the following commend:
 
 ```shell
 $ npm run deploy
